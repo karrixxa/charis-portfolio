@@ -1,0 +1,103 @@
+.timeline {
+  position: relative;
+  padding-left: 52px;
+  margin-bottom: 48px;
+}
+.tl-line {
+  position: absolute;
+  left: 16px; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--blue2), var(--blue), rgba(74,144,226,0));
+  border-radius: 2px;
+}
+.tl-item {
+  position: relative;
+  margin-bottom: 22px;
+}
+.tl-dot {
+  position: absolute;
+  left: -43px; top: 18px;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2.5px solid var(--blue);
+  box-shadow: 0 0 0 4px rgba(74,144,226,.1);
+  transition: all .25s;
+  z-index: 1;
+}
+.tl-item:hover .tl-dot {
+  background: var(--blue);
+  box-shadow: 0 0 0 6px rgba(74,144,226,.15);
+}
+.tl-card { cursor: default; }
+.tl-item:hover .tl-card { transform: translateX(4px) translateY(-3px); }
+
+.tl-top {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  gap: 10px; margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.tl-duration {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  color: var(--text3);
+  letter-spacing: .04em;
+}
+.tl-role {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy2);
+  margin-bottom: 5px;
+}
+.tl-company {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+.tl-bullets {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tl-bullets li {
+  font-size: .92rem;
+  line-height: 1.7;
+  color: var(--text2);
+  padding-left: 18px;
+  position: relative;
+}
+.tl-bullets li::before {
+  content: '▸';
+  position: absolute; left: 0;
+  color: var(--blue);
+  font-size: 10px; top: 2px;
+}
+
+.resume-box {
+  text-align: center;
+  padding: 36px;
+  cursor: default;
+}
+.resume-title {
+  font-family: var(--sans);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--navy2);
+  margin-bottom: 10px;
+}
+.resume-sub {
+  font-size: .95rem;
+  color: var(--text2);
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .timeline { padding-left: 36px; }
+  .tl-dot   { left: -27px; }
+}
